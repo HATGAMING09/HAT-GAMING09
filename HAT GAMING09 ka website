@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAT GAMING09 - Game & News Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffcc00;
+        }
+        h2 {
+            color: #ff5733;
+        }
+        #news-container, #games-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #news-container div, #games-container div {
+            border: 1px solid #444;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            background-color: #222;
+            border-radius: 5px;
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to HAT GAMING09</h1>
+    <p>Your ultimate hub for gaming news and trending games!</p>
+
+    <h2>🔥 Latest News</h2>
+    <div id="news-container"></div>
+
+    <h2>🎮 Trending Games</h2>
+    <div id="games-container"></div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+
+    <script>
+        // 🔥 Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-qYb_ne0IB_4bt3aQmnTf2WPBTDr2eEc",
+            authDomain: "hat-gaming09.firebaseapp.com",
+            databaseURL: "https://hat-gaming09-default-rtdb.firebaseio.com",
+            projectId: "hat-gaming09",
+            storageBucket: "hat-gaming09.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // 📰 Fetch News from News API
+        const newsApiKey = "63a4e1dcaedd44eeb43dcbc48c8a6887";
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const newsContainer = document.getElementById("news-container");
+                data.articles.forEach(article => {
+                    const div = document.createElement("div");
+                    div.innerHTML = `<h3>${article.title}</h3><p>${article.description}</p>`;
+                    newsContainer.appendChild(div);
+                });
+            })
+            .catch(error => console.error("News API Error:", error));
+
+        // 🎮 Fetch Games from RAWG API
+        const rawgApiKey = "ea767698a66649b9863ad427a6432a52";
+        fetch(`https://api.rawg.io/api/games?key=${rawgApiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const gamesContainer = document.getElementById("games-container");
+                data.results.forEach(game => {
+                    const div = document.createElement("div");
+                    div.innerHTML = `<h3>${game.name}</h3><img src="${game.background_image}" width="200px">`;
+                    gamesContainer.appendChild(div);
+                });
+            })
+            .catch(error => console.error("RAWG API Error:", error));
+    </script>
+</body>
+</html>
