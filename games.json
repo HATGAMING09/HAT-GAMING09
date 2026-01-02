@@ -1,0 +1,26 @@
+[
+  { "name": "Mindset Quiz",
+    "image": "https://i.ibb.co/vxmtkx0z/20251117-154404.png",
+    "link": "https://mindset-quiz-hat.vercel.app/"
+  },
+  {
+    "name": "GTA V",
+    "image": "https://i.imgur.com/6XbZQ0H.jpg",
+    "link": "https://www.rockstargames.com/gta-v"
+  },
+  {
+    "name": "PUBG PC",
+    "image": "https://i.imgur.com/jTqNaV6.jpg",
+    "link": "https://www.pubg.com"
+  },
+  {
+    "name": "Valorant",
+    "image": "https://i.imgur.com/ZQZSWrt.jpg",
+    "link": "https://playvalorant.com"
+  },
+  {
+    "name": "Call of Duty Warzone",
+    "image": "https://i.imgur.com/8XQ7mQp.jpg",
+    "link": "https://www.callofduty.com/warzone"
+  }
+]
