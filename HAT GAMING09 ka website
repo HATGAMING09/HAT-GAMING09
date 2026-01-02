@@ -57,14 +57,14 @@
         
         // 🔥 Firebase Configuration
         const firebaseConfig = {
-            apiKey: "AlzaSyB9HeD8qfokjCwBvX__W8FsRmEu4w707-k",
-            authDomain: "hat-gaming09.firebaseapp.com",
-            databaseURL: "https://hat-gaming09-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "hat-gaming09",
-            storageBucket: "hat-gaming09.appspot.com",
-            messagingSenderId: "957587631587",
-            appId: "1:957587631587:web:2f3009df500701b041c4d6",
-            measurementId: "G-K8BPD7CBFZ"
+            apiKey: "put your api",
+            authDomain: "put your auth domain",
+            databaseURL: "put you's",
+            projectId: "what you created",
+            storageBucket: "your's storage",
+            messagingSenderId: "yours sender id",
+            appId: "yoo:web:put here your ",
+            measurementId: "your's"
         };
 
         // Initialize Firebase
@@ -73,8 +73,8 @@
 
         // 🔥 Function to Fetch News
         async function fetchNews() {
-            const apiKey = "63a4e1dcaedd44eeb43dcbc48c8a6887";
-            const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+            const apiKey = "your api key";
+            const url = `your's}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -98,8 +98,8 @@
 
         // 🎮 Function to Fetch Games
         async function fetchGames() {
-            const apiKey = "317b7cbad7c3457d909d74ed33009004";
-            const url = `https://api.rawg.io/api/games?key=${apiKey}`;
+            const apiKey = "your api key here go to rawg ai and claim it's free";
+            const url = `yours`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
